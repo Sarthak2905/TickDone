@@ -15,4 +15,10 @@ addBtn.addEventListener("click", () => {
       input.value = "";
       render();   //update the UI.
     }
-  });
+});
+  
+function render() {
+  list.innerHTML = "";
+  let doneCount = 0;
+  
+}
