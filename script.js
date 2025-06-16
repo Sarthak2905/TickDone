@@ -8,3 +8,11 @@ const progress = document.querySelector(".progress");
 
 let tasks = [];
 
+addBtn.addEventListener("click", () => {
+    const task = input.value.trim();
+    if (task) {
+      tasks.push({ text: task, done: false }); 
+      input.value = "";
+      render();   //update the UI.
+    }
+  });
