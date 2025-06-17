@@ -21,4 +21,21 @@ function render() {
   list.innerHTML = "";
   let doneCount = 0;
   
+  tasks.forEach((task, index) => {
+    const li = document.createElement("li");
+    if (task.done) li.classList.add("completed");
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = task.done;
+    checkbox.addEventListener("change", () => {
+      task.done = !task.done;
+      render();
+    });
+
+    const span = document.createElement("span");
+    span.className = "task-text";
+    span.textContent = task.text;
+  
+  });
 }
