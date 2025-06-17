@@ -37,5 +37,15 @@ function render() {
     span.className = "task-text";
     span.textContent = task.text;
   
+    const edit = document.createElement("button");
+    edit.innerHTML = "✏️";
+    edit.addEventListener("click", () => {
+      const newText = prompt("Edit your task:", task.text);
+      if (newText !== null) {
+        task.text = newText.trim();
+        render();
+      }
+    });
+
   });
 }
