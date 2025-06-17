@@ -62,7 +62,17 @@ function render() {
     list.appendChild(li);
 
     if (task.done) doneCount++;
- 
-
   });
+  
+  taskCount.textContent = `${doneCount} / ${tasks.length}`;
+      const progressPercent = tasks.length ? (doneCount / tasks.length) * 100 : 0;
+      progress.style.width = progressPercent + "%";
+
+      if (progressPercent === 100) {
+        confetti({
+          particleCount: 150,
+          spread: 70,
+          origin: { y: 0.6 },
+        });
+      }
 }
