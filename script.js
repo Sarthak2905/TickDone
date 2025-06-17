@@ -47,5 +47,22 @@ function render() {
       }
     });
 
+    const del = document.createElement("button");
+    del.innerHTML = "🗑️";
+    del.addEventListener("click", () => {
+      tasks.splice(index, 1);
+      render();
+    });
+
+    li.appendChild(checkbox);
+    li.appendChild(span);
+    li.appendChild(edit);
+    li.appendChild(del);
+
+    list.appendChild(li);
+
+    if (task.done) doneCount++;
+ 
+
   });
 }
