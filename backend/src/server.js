@@ -4,6 +4,11 @@ import helmet from 'helmet';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import authRoutes from './routes/auth.js';
+import projectRoutes from './routes/projects.js';
+import blogRoutes from './routes/blog.js';
+import inquiryRoutes from './routes/inquiries.js';
+import appointmentRoutes from './routes/appointments.js';
+import testimonialRoutes from './routes/testimonials.js';
 
 dotenv.config();
 
@@ -34,6 +39,11 @@ app.get('/api/health', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/projects', projectRoutes);
+app.use('/api/blog', blogRoutes);
+app.use('/api/inquiries', inquiryRoutes);
+app.use('/api/appointments', appointmentRoutes);
+app.use('/api/testimonials', testimonialRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
